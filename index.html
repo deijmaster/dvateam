@@ -18,7 +18,7 @@
         form {
             border: 0;
             outline: 0;
-            width: 100%;
+            width: 80%;
             padding: 10px 20px;
         }
         input {
@@ -53,23 +53,8 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
         }
-        /* Styles for the first modal content */
-        .modal-content {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            font-family: "Basic Sans Light SF", sans-serif;
-            font-weight: 400;
-            font-size: 1rem;
-            line-height: 1.5rem;
-            letter-spacing: 0.2px;
-        }
         /* Styles for the second modal content */
-        .modal-content2 {
+        .modal-content {
             display: none;
             position: fixed;
             top: 50%;
@@ -87,7 +72,7 @@
     </style>
 </head>
 <body>
-    <div id="modalContent" class="modal-content">
+    <div id="modalContent">
         <form id="myForm" onsubmit="return completeForm()">
             <h1>User Validation Verification (UVV)</h1>
             We are committed to ensuring the accuracy of your account information to provide you with the best experience. Before you continue, please take a moment to confirm your information so we can validate what we have on file for your account.<br><br>
@@ -101,7 +86,7 @@
     <div id="modalBackground" class="modal-background"></div>
 
     <!-- Modal Content 2 (Hidden by default) -->
-    <div id="modalContent2" class="modal-content2">
+    <div id="modalContent2" class="modal-content">
         <h2>Validating...</h2>
         <!-- Add your content here -->
         <button onclick="hideModal()">Close</button>
