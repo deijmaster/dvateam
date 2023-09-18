@@ -96,9 +96,19 @@ function showModal() {
     document.getElementById('modalContent').style.display = 'block';
 }
 
-function closeModal() {
+function hideModal() {
     document.getElementById('modalBackground').style.display = 'none';
     document.getElementById('modalContent').style.display = 'none';
+}
+
+function completeForm() {
+    // Here, you would typically submit the form to the server
+    // For this example, we'll just simulate a submission delay (2 seconds)
+    setTimeout(function() {
+        // Hide the modal when the form is complete
+        hideModal();
+        // You can also choose to redirect or perform other actions here
+    }, 2000); // 2000 milliseconds = 2 seconds
 }
 </script>
 
