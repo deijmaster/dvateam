@@ -8,7 +8,7 @@ The DVA (Data and Security Verification & Assurance) team is at the forefront of
 
 **_Protecting the Digital World_**
 
-At DVA, our mission is clear: to safeguard your data and digital assets from threats, breaches, and vulnerabilities. We do this through a combination of cutting-edge technology, rigorous testing, and a dedicated team of security experts.
+Our mission is clear: to safeguard data and digital assets from threats, breaches, and vulnerabilities. We do this through a combination of cutting-edge technology, rigorous testing, and a dedicated team of security experts.
 
 ## Key Responsibilities
 
