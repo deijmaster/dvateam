@@ -51,7 +51,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0,0,0,.0001) !important;
         }
         /* Styles for the second modal content */
         .modal-content {
@@ -112,7 +112,7 @@
                 document.getElementById('modalContent').style.display = 'block';
 
                 // You can also choose to redirect or perform other actions here
-            }, 2000); // 2000 milliseconds = 2 seconds
+            }, 3000); // 2000 milliseconds = 2 seconds
 
             // Prevent the form from submitting
             return false;
