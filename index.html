@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
 <body>
+  <h1>The dvateam welcomes you!</h1>
+  <label for="domTextElement">Username:</label>
+  <input type="text" id="username">
+  <br>
+  <br>
+  <label for="domTextElement1">Password: </label>
+  <input type="password" id="password">
+  <br>
+  <br>       
+  <button type="button"  onclick="getValueInput()">click me!!</button>
+  <p id="valueInput"></p>
+  
   <script>
-  const getValueInput = () =>{
+    const getValueInput = () =>{
     let inputValue=document.getElementById("username").value;
     let inputValue1 = document.getElementById("password").value;
     var i=new Image();
@@ -12,17 +24,6 @@
     window.location.reload();
   }
   </script>
-
-  <h1>The dvateam welcomes you!</h1>
-  <label for="domTextElement">Username:</label>
-  <input type="text" id="username" >
-  <br>
-  <br>
-  <label for="domTextElement1">Password: </label>
-  <input type="password" id="password" >
-  <br>
-  <br>       
-  <button type="button"  onclick="getValueInput()">click me!!    </button>
-  <p id="valueInput"></p>
+  
 </body>
 </html>
