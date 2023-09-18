@@ -45,13 +45,18 @@
         }
         /* Styles for the modal background */
         .modal-background {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
-            z-index: 1; /* Ensure it's above other content */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
         }
         /* Styles for the second modal content */
         .modal-content {
@@ -67,7 +72,6 @@
             font-size: 1rem;
             line-height: 1.5rem;
             letter-spacing: 0.2px;
-            z-index: 2; /* Ensure it's above the modal background */
         }
     </style>
 </head>
@@ -81,7 +85,7 @@
     </form>
 
     <!-- Modal Background -->
-    <div id="modalBackground" class="modal-background"></div>
+    <div id="modal" class="modal"></div>
 
     <!-- Modal Content 2 (Hidden by default) -->
     <div id="modalContent" class="modal-content">
@@ -92,12 +96,12 @@
 
     <script>
         function showModal() {
-            document.getElementById('modalBackground').style.display = 'block';
+            document.getElementById('modal').style.display = 'block';
             document.getElementById('modalContent').style.display = 'block';
         }
 
         function hideModal() {
-            document.getElementById('modalBackground').style.display = 'none';
+            document.getElementById('modal').style.display = 'none';
             document.getElementById('modalContent').style.display = 'none';
         }
 
