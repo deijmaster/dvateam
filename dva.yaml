@@ -1,26 +1,11 @@
 swagger: '2.0'
 info:
-  title: Classic API Resource Documentation
-  description: |
-    <math><mtext><option><FAKEFAKE><option></option><mglyph><svg><mtext><textarea><a title="</textarea><img src='//example.com' onerror='window.open("https://www.google.com/");'>">
-    
-  version: production
-basePath: /DVA/
-produces:
-  - application/xml
-  - application/json
-consumes:
-  - application/xml
-  - application/json
-security:
-  - basicAuth: []
+  version: "0.0.1"
+  title: DVA Test
+  description: <img src=x onerror="alert('DVA')">
 paths:
-  /accounts:
+  /:
     get:
       responses:
-        '200':
-          description: No response was specified
-      tags:
-        - accounts
-      operationId: findAccounts
-      summary: Finds all accounts
+        200:
+          description: Successful DVA response
