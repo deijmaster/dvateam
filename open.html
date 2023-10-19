@@ -17,27 +17,37 @@
         }
 
         .login-container {
-            width: 300px;
+            display: flex;
             padding: 20px;
             border: 1px solid white;
             border-radius: 5px;
         }
 
+        .login-field {
+            margin: 0 10px;
+        }
+
         .input-field {
-            width: 100%;
             padding: 10px;
-            margin: 10px 0;
             color: black;
+        }
+
+        label {
+            margin-right: 5px;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" class="input-field" placeholder="Enter your username">
+        <div class="login-field">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" class="input-field" placeholder="Username">
+        </div>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" class="input-field" placeholder="Enter your password">
+        <div class="login-field">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" class="input-field" placeholder="Password">
+        </div>
 
         <input type="submit" value="Login">
     </div>
