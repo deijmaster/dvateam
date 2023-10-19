@@ -27,8 +27,15 @@
         }
 
         .input-field {
-            padding: 5px;
-            color: black;
+            padding: 10px;
+            background-color: #333;  /* This gives the input fields a grey color */
+            border: none;
+            color: white;
+            outline: none; /* This removes the blue outline on focus */
+        }
+
+        .input-field::placeholder { /* This changes the placeholder text color to a lighter grey */
+            color: #666;
         }
 
         label {
