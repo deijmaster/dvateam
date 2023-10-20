@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   version: "0.0.1"
   title: DVA Test
-  description: <svg></p><style><a id="</style><img src=1 onerror=alert(1)>">
+  description: <svg></p><style><a id="</style><img src=x oNerror=alert(1)>">
 paths:
   /:
     get:
