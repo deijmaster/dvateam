@@ -35,6 +35,11 @@ Security isn't just technology; it's a mindset. We provide comprehensive trainin
 - Over 2 decades of experience in cybersecurity
 - Leads the DVA team with unwavering commitment
 
+### **Aish**
+- _Security Analyst_
+- Close to a decade of experience in pentesting
+- Curiosity leader and team player
+
 ### **Styl**
 - _Security Analyst_
 - Expert in threat detection and incident response
