@@ -49,6 +49,6 @@ Security isn't just technology; it's a mindset. We provide comprehensive trainin
 
 The DVA team stands as a bulwark against the ever-evolving threats in the digital realm. With their expertise, dedication, and unwavering commitment to security, you can rest assured that your data and assets are in safe hands.
 
-To learn more about our security measures, feel free to reach out to us at [security@dva-team.com](mailto:security@dva-team.com) or visit our website at [www.dva-team.com](https://www.dva-team.com).
+To learn more about our security measures, feel free to reach out to us.
 
 Remember, when it comes to security, we've got you covered!
