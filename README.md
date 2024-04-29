@@ -52,3 +52,16 @@ The DVA team stands as a bulwark against the ever-evolving threats in the digita
 To learn more about our security measures, feel free to reach out to us.
 
 Remember, when it comes to security, we've got you covered!
+
+Here's an example of payloads that could be used in a chatbot
+
+1. **Fuzzing Payload**: `'!@#$%^&*()_+-=[]{}|;:",.<>?/'`
+2. **SQL Injection Payload**: `' OR '1'='1`
+3. **Cross-site Scripting (XSS) Payload**: `'<script>alert("XSS")</script>'`
+4. **Command Injection Payload**: `'; shutdown --'`
+5. **Format String Payload**: `'%s %s %s %s'`
+6. **Overflow Payload**: `'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA'` (length varies based on the buffer size expected)
+7. **Recursive Payload**: `'(repeat("hello", 1000000))'` (custom function to trigger recursion)
+8. **Logic Bomb Payload**: `'if (date == "01-01-2025") { crash(); }'` (date-specific condition)
+9. **Time-based Payload**: `'sleep(10000)'` (causing a delay to test timeout handling)
+10. **AI-specific Payload**: `'This statement is false.'` (a paradox to test AI's logical handling)
