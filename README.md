@@ -66,7 +66,3 @@ Here's an example of payloads that could be used in a chatbot
 9. **Time-based Payload**: `'sleep(10000)'` (causing a delay to test timeout handling)
 10. **AI-specific Payload**: `'This statement is false.'` (a paradox to test AI's logical handling)
 
-
-While I’ve been proud of my contributions, including in areas like [specific recent projects], I know that continuous improvement is key to maintaining our competitive edge. My goal moving forward is to not only deepen my technical expertise but also focus on mentorship within the team, ensuring that our collective growth aligns with the evolving demands of the industry.
-
-Overall, I’m proud of what I’ve achieved so far and am eager to tackle the new challenges that lie ahead with even more dedication and collaboration.
